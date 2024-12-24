@@ -2,7 +2,7 @@ terraform {
   required_version = "~> 1.4.6"
 
   backend "s3" {
-    bucket = "ogawa-snowflake-terraform"
+    bucket = "ogapy-snowflake-terraform"
     region = "ap-northeast-1"
     key = "common-snowflake.tfstate"
     dynamodb_table = "ogawa-terraform-state-lock"
@@ -18,7 +18,7 @@ terraform {
 
 provider "aws" {
   region = "ap-northeast-1"
-  profile = "rd_process"
+  profile = "private"
   default_tags {
     tags = {
       env = var.environment
