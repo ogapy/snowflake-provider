@@ -38,7 +38,7 @@ jobs:
                     - common-snowflake
         defaults:
             run:
-                working-directory: ./terraform/project
+                working-directory: terraform
         steps:
             - name: Checkout
               uses: actions/checkout@v4
@@ -48,10 +48,11 @@ jobs:
               with:
                   terraform_version: ${{ env.TF_VERSION }}
             - name: Configure AWS Credentials
-              uses: aws-actions/configure-aws-credentials@master
+              uses: aws-actions/configure-aws-credentials@v4
               with:
                   aws-region: ${{ env.AWS_REGION }}
                   role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/ogawa
+
             - name: Checkout format
               run: terraform fmt -check -recursive
 
