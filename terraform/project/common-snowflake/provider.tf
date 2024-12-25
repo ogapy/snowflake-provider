@@ -18,7 +18,6 @@ terraform {
 
 provider "aws" {
   region  = "ap-northeast-1"
-  profile = "private"
   default_tags {
     tags = {
       env     = var.environment
