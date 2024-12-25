@@ -51,7 +51,7 @@ jobs:
               uses: aws-actions/configure-aws-credentials@master
               with:
                   aws-region: ${{ env.AWS_REGION }}
-                  role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/ogawa-github-actions-ro-role
+                  role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/ogawa
             - name: Checkout format
               run: terraform fmt -check -recursive
 
