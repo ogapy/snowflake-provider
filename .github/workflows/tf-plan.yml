@@ -38,7 +38,7 @@ jobs:
                     - common-snowflake
         defaults:
             run:
-                working-directory: terraform
+                working-directory: terraform/project
         steps:
             - name: Checkout
               uses: actions/checkout@v4
