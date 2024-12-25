@@ -28,7 +28,7 @@ jobs:
         runs-on: ubuntu-22.04
         timeout-minutes: 60
         permissions:
-            id-token:write
+            id-token: write
             contents: read
             pull-requests: write
             statuses: write
