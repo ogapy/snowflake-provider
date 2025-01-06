@@ -1,4 +1,11 @@
 terraform {
+  backend "s3" {
+    bucket         = "ogapy-snowflake-terraform"
+    region         = "ap-northeast-1"
+    key            = "common-snowflake.tfstate"
+    dynamodb_table = "ogawa-terraform-state-lock"
+  }
+
   required_providers {
     snowflake = {
       source = "Snowflake-Labs/snowflake"
